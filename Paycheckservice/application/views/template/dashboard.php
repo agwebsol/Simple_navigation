@@ -10,7 +10,7 @@
                               url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/index", 
                         
                               complete: function(data){
-                                $('#data').html(data);
+                                $('#data').html('Yeaj');
                             },
                             
                             });
