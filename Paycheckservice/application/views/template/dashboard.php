@@ -2,22 +2,49 @@
             
         <body>
             <script type="text/javascript">
-             $(document).ready(function() {
-                        $('#btnn').click(function(eve){
-                                    $.ajax({
-                                                 url: '<?php echo base_url(); ?>App_Controller/index/', 
-                                                 type: 'POST',
-                                                 dataType:'json',
-                                                 data: {'view_param': value},
-                                                 success: function(response)
-                                                 {
-                                    
-                                                    $('#data').html(response.html_view);
-                                    
-                                                 }
-                                    });
-                        });
-            });
+             function ajax_estimate_app()
+                {
+                    $('#month').html('Select');
+                    var form_data =
+                    {
+                        f_tax :$('#f_tax').val(),
+                        s_tax  :$('#s_tax').val(),
+                        o_tax  :$('#o_tax').val()
+                    }
+                    $.ajax
+                    ({
+                        url: "<?php echo site_url('App_Controller/ajax_estimate_app'); ?>",
+                        type: 'POST',
+                        async : false,
+                        data: form_data,
+                        success: function(msg)
+                                {
+                                    $('#data').html(msg);
+                                }
+                    });
+                    
+                }
+                function view_payroll_month(month) {
+                    var form_data =
+                    {
+                        date : month,
+                        f_tax : $('#f_tax').val(),
+                        s_tax  :$('#s_tax').val(),
+                        o_tax  :$('#o_tax').val()
+                    }
+                    $.ajax
+                    ({
+                        url: "<?php echo site_url('App_Controller/view_payroll_month'); ?>",
+                        type: 'POST',
+                        async : false,
+                        data: form_data,
+                        success: function(msg)
+                                {
+                                    $('#data').html(msg);
+                                }
+                    });
+                    
+                }
             </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
