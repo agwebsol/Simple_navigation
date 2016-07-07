@@ -19,7 +19,7 @@
                         data: form_data,
                         success: function(msg)
                                 {
-                                    $('#data').html(msg);
+                                    $('#data').html('oddd');
                                 }
                     });
                     
