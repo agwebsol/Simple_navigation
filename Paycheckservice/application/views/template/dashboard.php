@@ -26,7 +26,7 @@
                             <th>Federal Tax %</th><td><input type="text" id="f_tax" value="5.1" required></td>
                             <th>State Tax %</th><td><input type="text" id="s_tax" value="4.5" required></td>
                             <th>Others %</th><td><input type="text" id="o_tax" value="6.45" required></td>
-                            <th></th><td><input class="btn btn-info" id="btnn" type="button" name="submit" value="Estimate Tax"></td>
+                            <th></th><td><input class="btn btn-info" onclick="ajax_estimate_app()" type="button" name="submit" value="Estimate Tax"></td>
                         </tr>
                     </table>
                 </form>
@@ -38,23 +38,27 @@
                 </div>
             </div>
                 <script type="text/javascript">
-                            $(document).ready(function(){
-                                var form_data =
+                           function ajax_estimate_app()
+                                {
+                                    $('#month').html('Select');
+                                    var form_data =
                                     {
                                         f_tax :$('#f_tax').val(),
                                         s_tax  :$('#s_tax').val(),
                                         o_tax  :$('#o_tax').val()
                                     }
-                                $("#btnn").click(function(){
-                                    $.ajax({
-                                            type: 'POST',
-                                            url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_estimate_app',
-                                            data: form_data,
-                                            success: function(msg){
-                                                    $("#data").html(msg);
-                                            }
+                                    $.ajax
+                                    ({
+                                        url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_estimate_app",
+                                        type: 'POST',
+                                        async : false,
+                                        data: form_data,
+                                        success: function(msg)
+                                                {
+                                                    $('#data').html(msg);
+                                                }
                                     });
-                                });
-                            });
+                                    
+                                }
                 </script>
         </body>
