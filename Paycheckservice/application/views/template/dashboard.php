@@ -7,7 +7,7 @@
                         
                             $.ajax({
                               type: "POST", 
-                              url: "http://www.w3schools.com/", 
+                              url: "http://daro-portfolio.tk/index.php/App_Controller/index", 
                         
                               complete: function(data){
                                 $('#data').html(data);
