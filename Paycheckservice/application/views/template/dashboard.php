@@ -21,8 +21,8 @@
                                 {
                                     $('#data').html(msg);
                                 }
+                                 return false;
                     });
-                    error: function(){alert('error');}
                     
                 }
                 function view_payroll_month(month) {
@@ -43,8 +43,8 @@
                                 {
                                     $('#data').html(msg);
                                 }
+                                return false;
                     });
-                    error: function(){alert('error');}
                     
                 }
             </script>
