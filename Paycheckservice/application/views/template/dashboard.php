@@ -2,49 +2,15 @@
             
         <body>
             <script type="text/javascript">
-             function ajax_estimate_app()
-                {
-                    $('#month').html('Select');
-                    var form_data =
-                    {
-                        f_tax :$('#f_tax').val(),
-                        s_tax  :$('#s_tax').val(),
-                        o_tax  :$('#o_tax').val()
-                    }
-                    $.ajax
-                    ({
-                        url: "<?php echo site_url('App_Controller/ajax_estimate_app'); ?>",
-                        type: 'POST',
-                        async : false,
-                        data: form_data,
-                        success: function(msg)
-                                {
-                                    $('#data').html('oddd');
-                                }
-                    });
-                    
-                }
-                function view_payroll_month(month) {
-                    var form_data =
-                    {
-                        date : month,
-                        f_tax : $('#f_tax').val(),
-                        s_tax  :$('#s_tax').val(),
-                        o_tax  :$('#o_tax').val()
-                    }
-                    $.ajax
-                    ({
-                        url: "<?php echo site_url('App_Controller/view_payroll_month'); ?>",
-                        type: 'POST',
-                        async : false,
-                        data: form_data,
-                        success: function(msg)
-                                {
-                                    $('#data').html('Jesus');
-                                }
-                    });
-                    
-                }
+             <script>
+                        $(document).ready(function(){
+                            $("button").click(function(){
+                                $.get("http://daro-portfolio.tk/index.php/App_Controller/index", function(data, status){
+                                    alert("Data: " + data + "\nStatus: " + status);
+                                });
+                            });
+                        });
+            </script>
             </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
