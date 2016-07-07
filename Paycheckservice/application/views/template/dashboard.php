@@ -2,6 +2,9 @@
     <html>
         <head>
             <script>
+                function click_kick(){
+                    $('#data').html('Yeah');
+                }
                 function ajax_estimate_app()
                 {
                     $('#month').html('Select');
@@ -21,7 +24,6 @@
                                 {
                                     $('#data').html(msg);
                                 }
-                        error: function(){alert('error');}
                     });
                     
                 }
@@ -77,7 +79,7 @@
                             <th>Federal Tax %</th><td><input type="text" id="f_tax" value="5.1" required></td>
                             <th>State Tax %</th><td><input type="text" id="s_tax" value="4.5" required></td>
                             <th>Others %</th><td><input type="text" id="o_tax" value="6.45" required></td>
-                            <th></th><td><input class="btn btn-info" onclick = "ajax_estimate_app()" type="button" name="submit" value="Estimate Tax"></td>
+                            <th></th><td><input class="btn btn-info" onclick = "click_kick()" type="button" name="submit" value="Estimate Tax"></td>
                         </tr>
                     </table>
                 </form>
