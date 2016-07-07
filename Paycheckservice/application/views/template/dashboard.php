@@ -42,7 +42,7 @@
                                 $("#btnn").click(function(){
                                     $.ajax({
                                             type: 'POST',
-                                            url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/',
+                                            url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/ajax_estimate_app',
                                             success: function(data){
                                                     $("#data").html(data);
                                             }
