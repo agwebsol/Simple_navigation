@@ -1,7 +1,7 @@
 <!---Display payroll period--->
 <body>
     <div>
-        <div class="jumbotron"><h3 style="color: BLUE;"><i class="fa fa-calendar" style="font-size:80px; color:BLUE;"></i><? echo $period; ?></h3></div>
+        <div class="jumbotron"><h3 style="color: BLUE;"><i class="fa fa-calendar" style="font-size:80px; color:BLUE;"></i><?php echo $period; ?></h3></div>
         <div>
             <table style="width:900px;" class="table table-hover">
                 <thead>
@@ -30,17 +30,17 @@
                     {
                         ?>
                             <tr>
-                                <td><? echo $val['Firstname'].' '. $val['Lastname']; ?></td>
-                                <td><? echo $val['SSN']; ?></td>
-                                <td><? echo $val['Hour_rate']; ?></td>
-                                <td><? echo $val['Hours']; ?></td>
-                                <td><? echo $pay = $val['Hour_rate']*$val['Hours']; ?></td>
-                                <td><? echo $f = $pay*($f_tax/100); ?></td>
-                                <td><? echo $s = $pay*($s_tax/100); ?></td>
-                                <td><? echo $o = $pay*($o_tax/100); ?></td>
-                                <td><? echo $wages = $pay-$f-$s-$o; ?></td>
+                                <td><?php echo $val['Firstname'].' '. $val['Lastname']; ?></td>
+                                <td><?php echo $val['SSN']; ?></td>
+                                <td><?php echo $val['Hour_rate']; ?></td>
+                                <td><?php echo $val['Hours']; ?></td>
+                                <td><?php echo $pay = $val['Hour_rate']*$val['Hours']; ?></td>
+                                <td><?php echo $f = $pay*($f_tax/100); ?></td>
+                                <td><?php echo $s = $pay*($s_tax/100); ?></td>
+                                <td><?php echo $o = $pay*($o_tax/100); ?></td>
+                                <td><?php echo $wages = $pay-$f-$s-$o; ?></td>
                             </tr>
-                        <?
+                        <?php
                         $total_week = $total_week + $wages;
                         $total_ftax = $total_ftax + $f;
                         $total_stax = $total_stax + $s;
@@ -52,22 +52,22 @@
             </table>
             <table style="margin-top:50px;">
                 <tr>
-                    <th>Total Weekly Salary</th><td style="background-color:grey;"><? echo $total_week; ?></td>
+                    <th>Total Weekly Salary</th><td style="background-color:grey;"><?php echo $total_week; ?></td>
                 </tr>
                 <tr>
-                    <th>Total Fed. Witholdings</th><td style="background-color:red;"><? echo $total_ftax; ?></td>
+                    <th>Total Fed. Witholdings</th><td style="background-color:red;"><?php echo $total_ftax; ?></td>
                 </tr>
                 <tr>
-                    <th>Total State Witholdings</th><td style="background-color:green;"><? echo $total_stax; ?></td>
+                    <th>Total State Witholdings</th><td style="background-color:green;"><?php echo $total_stax; ?></td>
                 </tr>
                 <tr>
-                    <th>Total SOS/MED Witholdings</th><td style="background-color:yellow;"><? echo $total_otax; ?></td>
+                    <th>Total SOS/MED Witholdings</th><td style="background-color:yellow;"><?php echo $total_otax; ?></td>
                 </tr>
            </table>
             
             <div style="margin-top: 12px; ">
                 <form method="POST" action="delete_payroll_period">
-                    <input type="hidden" value="<? echo $period; ?>" name="period">
+                    <input type="hidden" value="<?php echo $period; ?>" name="period">
                     <input  class="btn btn-info" type="submit" name="delete" value="DELETE">
                 </form>
             </div>
