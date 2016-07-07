@@ -2,15 +2,13 @@
             
         <body>
             <script type="text/javascript">
-             <script>
                         $(document).ready(function(){
                             $("btnn").click(function(){
-                                $.get("http://daro-portfolio.tk/index.php/App_Controller/index", function(data, status){
+                                $.get("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
                                     alert("Data: " + data + "\nStatus: " + status);
                                 });
                             });
                         });
-            </script>
             </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
