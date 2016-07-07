@@ -15,11 +15,11 @@
         </head>
         <body>
             <nav class="w3-sidenav w3-black" style="width:70px">
-               <? include('template/navigation.php'); ?> 
+               <?php include('template/navigation.php'); ?> 
             </nav>
             <div class="container-fluid" style="margin-left:70px">
                 <div  style="float:left; width:100%; background-color:white; height:500px;">
-                    <? include('template/'.$load.'.php'); ?>
+                    <?php include('template/'.$load.'.php'); ?>
                 </div>
             </div>
         </body>
