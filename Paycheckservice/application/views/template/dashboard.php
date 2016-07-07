@@ -7,12 +7,12 @@
                         
                             $.ajax({
                               type: "POST", 
-                              url: "http://daro-portfolio.tk/index.php/App_Controller/index", 
+                              url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/index", 
                         
                               complete: function(data){
                                 $('#data').html(data);
                             },
-                            error: function(){alert('error');}
+                            
                             });
                           });
                         });
