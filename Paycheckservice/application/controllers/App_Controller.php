@@ -82,7 +82,7 @@ class App_Controller extends CI_Controller
               "Personal_info" => $json_personal_info
             );
             $this->Crud_model->add_employee_db($employee_data);
-			 header('LOCATION: view_all_employee');
+			 header('LOCATION: index.php?App_Controller/view_all_employee');
         }
         
         $page_data['load'] = 'add_employee';
@@ -146,7 +146,7 @@ class App_Controller extends CI_Controller
               "Personal_info" => $json_personal_info
             );
             $query =$this->Crud_model->update_employee($employee_data, $_POST['id']);
-            header('LOCATION: view_all_employee');
+            header('LOCATION: index.php?App_Controller/view_all_employee');
         }
     }
 	
@@ -167,7 +167,7 @@ class App_Controller extends CI_Controller
         if(isset($_POST['delete']))
         {
             $this->Crud_model->delete_employee($_POST['id']);
-            header('LOCATION: view_employee');
+            header('LOCATION: index.php?App_Controller/view_all_employee');
         }
     }
 	
@@ -234,7 +234,7 @@ class App_Controller extends CI_Controller
                 "Hours" => $this->test_input($_POST['hours_'.$i])
                           );
             $this->Crud_model->submit_hours_db($data);
-			 header('LOCATION: view_all_employee');
+			 header('LOCATION: index.php?App_Controller/index');
         }
         
       }
@@ -264,7 +264,7 @@ class App_Controller extends CI_Controller
 		{
 			$period = $_POST['period'];
 			$this->Crud_model->delete_payroll_period($period);
-			header('LOCATION:App_Controller');
+			header('LOCATION:index.php?App_Controller/App_Controller');
 		}
 	}
 }
