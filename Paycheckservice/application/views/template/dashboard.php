@@ -2,25 +2,22 @@
             
         <body>
             <script type="text/javascript">
-                        $(document).ready(function() {
-                            $('#btnn').click(function(eve){
-                            var form_data =
-                                {
-                                    f_tax :$('#f_tax').val(),
-                                    s_tax  :$('#s_tax').val(),
-                                    o_tax  :$('#o_tax').val()
-                                }
-                            $.ajax({
-                              type: "POST", 
-                              url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/index", 
-                        
-                              complete: function(data){
-                                $('#data').html(form_data);
-                            },
-                            
-                            });
-                          });
+             $(document).ready(function() {
+                        $('#btnn').click(function(eve){
+                                    $.ajax({
+                                                 url: '<?php echo base_url(); ?>App_Controller/index/', 
+                                                 type: 'POST',
+                                                 dataType:'json',
+                                                 data: {'view_param': value},
+                                                 success: function(response)
+                                                 {
+                                    
+                                                    $('#data').html(response.html_view);
+                                    
+                                                 }
+                                    });
                         });
+            });
             </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
