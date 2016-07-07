@@ -6,7 +6,7 @@
                             $('#btnn').click(function(eve){
                         
                             $.ajax({
-                              type: "GET", 
+                              type: "POST", 
                               url: "http://www.w3schools.com/", 
                         
                               complete: function(data){
