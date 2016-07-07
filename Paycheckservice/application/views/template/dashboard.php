@@ -1,54 +1,21 @@
 <!---Dashboard with Ajax functions--->
             
         <body>
-            <script>
-                function click_kick(){
-                    $('#data').html('Yeah');
-                }
-                function ajax_estimate_app()
-                {
-                    $('#month').html('Select');
-                    var form_data =
-                    {
-                        f_tax :$('#f_tax').val(),
-                        s_tax  :$('#s_tax').val(),
-                        o_tax  :$('#o_tax').val()
-                    }
-                    $.ajax
-                    ({
-                        url: "http://www.w3schools.com/",
-                        type: 'POST',
-                        async : false,
-                        data: form_data,
-                        success: function(msg)
-                                {
-                                    $('#data').html(msg);
-                                }
-                    });
+            <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('#reg_link_rules').click(function(eve){
                         
-                    
-                }
-                function view_payroll_month(month) {
-                    var form_data =
-                    {
-                        date : month,
-                        f_tax : $('#f_tax').val(),
-                        s_tax  :$('#s_tax').val(),
-                        o_tax  :$('#o_tax').val()
-                    }
-                    $.ajax
-                    ({
-                        url: "<?php echo site_url('<?php echo base_url(); ?>App_Controller/view_payroll_month'); ?>",
-                        type: 'POST',
-                        async : false,
-                        data: form_data,
-                        success: function(msg)
-                                {
-                                    $('#data').html(msg);
-                                }
-                    });
-                    
-                }
+                            $.ajax({
+                              type: "GET", 
+                              url: "http://www.w3schools.com/", 
+                        
+                              complete: function(data){
+                                $('#load_here').html(data);
+                            },
+                            error: function(){alert('error');}
+                            });
+                          });
+                        });
             </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
