@@ -40,9 +40,7 @@
                 <script type="text/javascript">
                             $(document).ready(function(){
                                 $("#btnn").click(function(){
-                                    $.ajax("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
-                                        alert("Data: " + data + "\nStatus: " + status);
-                                    });
+                                    $("#data").html('Yeah');
                                 });
                             });
                 </script>
