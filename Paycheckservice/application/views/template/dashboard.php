@@ -16,7 +16,7 @@
                     }
                     $.ajax
                     ({
-                        url: "htpp://daro-portfolio.tk/index.php/App_Controller/ajax_estimate_app",
+                        url: "http://www.w3schools.com/",
                         type: 'POST',
                         async : false,
                         data: form_data,
@@ -24,7 +24,6 @@
                                 {
                                     $('#data').html(msg);
                                 }
-                        error: function(){alert('error');}
                     });
                         
                     
