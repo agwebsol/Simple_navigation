@@ -1,15 +1,4 @@
 <!---Dashboard with Ajax functions--->
-        <head>
-                        <script type="text/javascript">
-                                    $(document).ready(function(){
-                                        $("#btnn").click(function(){
-                                            $.ajax("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
-                                                alert("Data: " + data + "\nStatus: " + status);
-                                            });
-                                        });
-                                    });
-                        </script>
-        </head>
         <body>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
@@ -48,4 +37,13 @@
                     <h5 style="margin-top: 80px;">Sample Project/Code by Daro Omwanor Copyright 2016</h5>
                 </div>
             </div>
+                <script type="text/javascript">
+                            $(document).ready(function(){
+                                $("#btnn").click(function(){
+                                    $.ajax("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
+                                        alert("Data: " + data + "\nStatus: " + status);
+                                    });
+                                });
+                            });
+                </script>
         </body>
