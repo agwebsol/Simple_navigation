@@ -41,22 +41,22 @@
                                 $k++;
                               ?>
                                 <tr>
-                                    <td><? echo $employee['Firstname']; ?></td>
-                                    <td><? echo $employee['Lastname']; ?></td>
-                                    <td><? echo $employee['SSN']; ?></td>
-                                    <td><? echo $employee['Hour_rate']; ?></td>
+                                    <td><?php echo $employee['Firstname']; ?></td>
+                                    <td><?php echo $employee['Lastname']; ?></td>
+                                    <td><?php echo $employee['SSN']; ?></td>
+                                    <td><?php echo $employee['Hour_rate']; ?></td>
                                     <td>
                                         <input type="input" name="hours_<? echo $k; ?>" required>
                                     </td>
                                     <td>
-                                        <input type="hidden" value="<? echo $employee['SSN']; ?>" name="ssn_<? echo $k; ?>">
-                                        <input type="hidden" value="<? echo $employee['ID']; ?>" name="id_<? echo $k; ?>">
+                                        <input type="hidden" value="<?php echo $employee['SSN']; ?>" name="ssn_<?php echo $k; ?>">
+                                        <input type="hidden" value="<?php echo $employee['ID']; ?>" name="id_<?php echo $k; ?>">
                                     </td>
                                 </tr>
                               <?  
                             }
                         ?>
-                        <input type="hidden" value="<? echo count($employees); ?>" name="count">
+                        <input type="hidden" value="<?php echo count($employees); ?>" name="count">
                     </tbody>
                 </table>
                 <div><input class="btn btn-info" type="submit" value="Submit Hours" name="submit"></div>
