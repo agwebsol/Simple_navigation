@@ -1,15 +1,16 @@
 <!---Dashboard with Ajax functions--->
-            
+        <head>
+                        <script type="text/javascript">
+                                    $(document).ready(function(){
+                                        $("#btnn").click(function(){
+                                            $.ajax("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
+                                                alert("Data: " + data + "\nStatus: " + status);
+                                            });
+                                        });
+                                    });
+                        </script>
+        </head>
         <body>
-            <script type="text/javascript">
-                        $(document).ready(function(){
-                            $("#btnn").click(function(){
-                                $.get("http://52.40.215.168//index.php/App_Controller/index", function(data, status){
-                                    alert("Data: " + data + "\nStatus: " + status);
-                                });
-                            });
-                        });
-            </script>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
                     <h3 style=""><i class="fa fa-home" style="font-size:70px; "></i>Home</h3>
