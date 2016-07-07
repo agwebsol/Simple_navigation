@@ -39,12 +39,19 @@
             </div>
                 <script type="text/javascript">
                             $(document).ready(function(){
+                                var form_data =
+                                    {
+                                        f_tax :$('#f_tax').val(),
+                                        s_tax  :$('#s_tax').val(),
+                                        o_tax  :$('#o_tax').val()
+                                    }
                                 $("#btnn").click(function(){
                                     $.ajax({
                                             type: 'POST',
-                                            url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/App_Controller/ajax_estimate_app',
-                                            success: function(data){
-                                                    $("#data").html(data);
+                                            url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_estimate_app',
+                                            data: form_data,
+                                            success: function(msg){
+                                                    $("#data").html(msg);
                                             }
                                     });
                                 });
