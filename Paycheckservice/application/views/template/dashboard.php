@@ -44,7 +44,7 @@
                                             type: 'POST',
                                             url: 'http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/',
                                             success: function(data){
-                                                    $("#data").html('Yeah')
+                                                    $("#data").html(data);
                                             }
                                     });
                                 });
