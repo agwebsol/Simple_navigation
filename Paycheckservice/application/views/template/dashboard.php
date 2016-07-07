@@ -24,7 +24,9 @@
                                 {
                                     $('#data').html(msg);
                                 }
+                        error: function(){alert('error');}
                     });
+                        
                     
                 }
                 function view_payroll_month(month) {
