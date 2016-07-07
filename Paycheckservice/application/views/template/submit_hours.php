@@ -53,7 +53,7 @@
                                         <input type="hidden" value="<?php echo $employee['ID']; ?>" name="id_<?php echo $k; ?>">
                                     </td>
                                 </tr>
-                              <?  
+                              <?php  
                             }
                         ?>
                         <input type="hidden" value="<?php echo count($employees); ?>" name="count">
