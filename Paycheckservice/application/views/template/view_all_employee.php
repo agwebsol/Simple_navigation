@@ -11,7 +11,7 @@
                     };
                 $.ajax
                 ({
-                    url: "<?php echo site_url('App_controller/ajax_employee'); ?>",
+                    url: "<?php echo site_url('ajax_employee'); ?>",
                     type: 'POST',
                     async : false,
                     data: form_data,
@@ -32,7 +32,7 @@
                     };
                 $.ajax
                 ({
-                    url: "<?php echo site_url('App_controller/ajax_delete_employee'); ?>",
+                    url: "<?php echo site_url('ajax_delete_employee'); ?>",
                     type: 'POST',
                     async : false,
                     data: form_data,
@@ -66,15 +66,15 @@
                         {
                             ?>
                                 <tr>
-                                    <td><? echo $employee['Firstname']; ?></td>
-                                    <td><? echo $employee['Lastname']; ?></td>
-                                    <td><? echo $employee['SSN']; ?></td>
-                                    <td><? echo $employee['Hour_rate']; ?></td>
-                                    <td><? echo $employee['Salary']; $id = $employee['ID']; ?></td>
+                                    <td><?php echo $employee['Firstname']; ?></td>
+                                    <td><?php echo $employee['Lastname']; ?></td>
+                                    <td><?php echo $employee['SSN']; ?></td>
+                                    <td><?php echo $employee['Hour_rate']; ?></td>
+                                    <td><?php echo $employee['Salary']; $id = $employee['ID']; ?></td>
                                     <td>
-                                        <button class="btn btn-primary" onclick="run(<? echo $id; ?>)" value="Edit" role="button" >Edit</button>
+                                        <button class="btn btn-primary" onclick="run(<?php echo $id; ?>)" value="Edit" role="button" >Edit</button>
                                     </td>
-                                    <td><button class="btn btn-danger" onclick="delete_employee(<? echo $id; ?>)">Delete</button></td>
+                                    <td><button class="btn btn-danger" onclick="delete_employee(<?php echo $id; ?>)">Delete</button></td>
                                 </tr>
                             <?    
                         }
