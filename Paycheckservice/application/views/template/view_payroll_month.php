@@ -1,4 +1,4 @@
-<!---display payroll by month--->
+<!---display payroll by month with form for hours--->
 <body>
     <div>
         <div>
@@ -17,30 +17,30 @@
                     {
                         ?>
                         <tr>
-                            <td><? echo $no; ?></td>
+                            <td><?php echo $no; ?></td>
                             <td>
-                                <? foreach($period[$k] as $val)
+                                <?php foreach($period[$k] as $val)
                                     {
                                         ?>
                                             <form Method="POST" action="view_payroll_period">
-                                                <input type="hidden" value="<? echo $f_tax; ?>" name="f_tax">
-                                                <input type="hidden" value="<? echo $s_tax; ?>" name="s_tax">
-                                                <input type="hidden" value="<? echo $o_tax; ?>" name="o_tax">
-                                                <input type="submit" class="btn btn-info" value="<? echo $val; ?>" name="period">
+                                                <input type="hidden" value="<?php echo $f_tax; ?>" name="f_tax">
+                                                <input type="hidden" value="<?php echo $s_tax; ?>" name="s_tax">
+                                                <input type="hidden" value="<?php echo $o_tax; ?>" name="o_tax">
+                                                <input type="submit" class="btn btn-info" value="<?php echo $val; ?>" name="period">
                                             </form>
-                                        <?
+                                        <?php
                                     }
                                 ?>
                             </td>
                         </tr>
-                        <?
+                        <?php
                         $k++;
                         $no++;
                     }
                 ?>
                 </tbody>
             </table>
-            <?
+            <?php
                 if(count($period)<1)
                 {
                     echo 'Please Enter Pay Stubs For This Month';
