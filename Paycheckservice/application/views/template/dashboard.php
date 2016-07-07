@@ -21,7 +21,7 @@
                                 {
                                     $('#data').html(msg);
                                 }
-                                 return false;
+                        error: function(){alert('error');}
                     });
                     
                 }
@@ -43,7 +43,7 @@
                                 {
                                     $('#data').html(msg);
                                 }
-                                return false;
+                        error: function(){alert('error');}
                     });
                     
                 }
