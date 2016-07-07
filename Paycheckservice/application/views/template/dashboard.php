@@ -38,18 +38,40 @@
                 </div>
             </div>
                 <script type="text/javascript">
-                           function ajax_estimate_app()
+                        function ajax_estimate_app()
+                        {
+                            $('#month').html('Select');
+                            var form_data =
+                            {
+                                f_tax :$('#f_tax').val(),
+                                s_tax  :$('#s_tax').val(),
+                                o_tax  :$('#o_tax').val()
+                            }
+                            $.ajax
+                            ({
+                                url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_estimate_app",
+                                type: 'POST',
+                                async : false,
+                                data: form_data,
+                                success: function(msg)
+                                        {
+                                            $('#data').html(msg);
+                                        }
+                            });
+                            
+                        }
+                        function view_payroll_month(month) 
+                        {
+                                var form_data =
                                 {
-                                    $('#month').html('Select');
-                                    var form_data =
-                                    {
-                                        f_tax :$('#f_tax').val(),
+                                        date : month,
+                                        f_tax : $('#f_tax').val(),
                                         s_tax  :$('#s_tax').val(),
                                         o_tax  :$('#o_tax').val()
-                                    }
-                                    $.ajax
-                                    ({
-                                        url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_estimate_app",
+                                }
+                                $.ajax
+                                ({
+                                        url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/view_payroll_month",
                                         type: 'POST',
                                         async : false,
                                         data: form_data,
@@ -57,29 +79,8 @@
                                                 {
                                                     $('#data').html(msg);
                                                 }
-                                    });
-                                    
-                                }
-                                function view_payroll_month(month) {
-                                            var form_data =
-                                            {
-                                                date : month,
-                                                f_tax : $('#f_tax').val(),
-                                                s_tax  :$('#s_tax').val(),
-                                                o_tax  :$('#o_tax').val()
-                                            }
-                                            $.ajax
-                                            ({
-                                                url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/view_payroll_month",
-                                                type: 'POST',
-                                                async : false,
-                                                data: form_data,
-                                                success: function(msg)
-                                                        {
-                                                            $('#data').html(msg);
-                                                        }
-                                            });
-                                            
-                                        }
+                                });
+                        
+                        }
                 </script>
         </body>
