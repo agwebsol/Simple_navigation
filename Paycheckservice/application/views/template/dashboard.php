@@ -13,7 +13,7 @@
                     }
                     $.ajax
                     ({
-                        url: "<?php echo site_url('ajax_estimate_app'); ?>",
+                        url: "<?php echo site_url('App_Controller/ajax_estimate_app'); ?>",
                         type: 'POST',
                         async : false,
                         data: form_data,
