@@ -4,7 +4,7 @@
             <script type="text/javascript">
              <script>
                         $(document).ready(function(){
-                            $("button").click(function(){
+                            $("btnn").click(function(){
                                 $.get("http://daro-portfolio.tk/index.php/App_Controller/index", function(data, status){
                                     alert("Data: " + data + "\nStatus: " + status);
                                 });
