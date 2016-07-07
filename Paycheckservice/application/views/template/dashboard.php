@@ -34,7 +34,7 @@
                     }
                     $.ajax
                     ({
-                        url: "<?php echo site_url('view_payroll_month'); ?>",
+                        url: "<?php echo site_url('<?php echo base_url(); ?>App_Controller/view_payroll_month'); ?>",
                         type: 'POST',
                         async : false,
                         data: form_data,
