@@ -82,7 +82,7 @@ class App_Controller extends CI_Controller
               "Personal_info" => $json_personal_info
             );
             $this->Crud_model->add_employee_db($employee_data);
-			 header('LOCATION:'view_all_employee');
+			 header('LOCATION: view_all_employee');
         }
         
         $page_data['load'] = 'add_employee';
@@ -146,7 +146,7 @@ class App_Controller extends CI_Controller
               "Personal_info" => $json_personal_info
             );
             $query =$this->Crud_model->update_employee($employee_data, $_POST['id']);
-            header('LOCATION:'view_all_employee');
+            header('LOCATION: view_all_employee');
         }
     }
 	
@@ -234,7 +234,7 @@ class App_Controller extends CI_Controller
                 "Hours" => $this->test_input($_POST['hours_'.$i])
                           );
             $this->Crud_model->submit_hours_db($data);
-			 header('LOCATION:view_all_employee');
+			 header('LOCATION: view_all_employee');
         }
         
       }
