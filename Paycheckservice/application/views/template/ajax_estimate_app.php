@@ -31,19 +31,19 @@
                         $k++;
                        ?>
                         <tr>
-                            <td><? echo $k.'.'; ?></td>
-                            <td><? echo $data['Firstname'].' '.$data['Lastname']; ?></td>
-                            <td><? echo $data['SSN']; ?></td>
-                            <td><? echo $data['Hour_rate']; ?></td>
-                            <td><? echo $data['Salary']; ?></td>
-                            <td><? echo $week = $data['Hour_rate']*$data['Salary'];?></td>
-                            <td><? echo $month = 4*$week; ?></td>
-                            <td><? echo $year = 12*$month; ?></td>
-                            <td style="background-color:red;"><? echo $f_wth = ($f_tax/100)*$year; ?></td>
-                            <td style="background-color:green;"><? echo $s_wth = ($s_tax/100)*$year; ?></td>
-                            <td style="background-color:yellow;"><? echo $o_wth = ($o_tax/100)*$year; ?></td>
+                            <td><?php echo $k.'.'; ?></td>
+                            <td><?php echo $data['Firstname'].' '.$data['Lastname']; ?></td>
+                            <td><?php echo $data['SSN']; ?></td>
+                            <td><?php echo $data['Hour_rate']; ?></td>
+                            <td><?php echo $data['Salary']; ?></td>
+                            <td><?php echo $week = $data['Hour_rate']*$data['Salary'];?></td>
+                            <td><?php echo $month = 4*$week; ?></td>
+                            <td><?php echo $year = 12*$month; ?></td>
+                            <td style="background-color:red;"><?php echo $f_wth = ($f_tax/100)*$year; ?></td>
+                            <td style="background-color:green;"><?php echo $s_wth = ($s_tax/100)*$year; ?></td>
+                            <td style="background-color:yellow;"><?php echo $o_wth = ($o_tax/100)*$year; ?></td>
                         </tr>
-                       <?
+                       <?php
                        $total_week = $total_week + $week;
                        $total_month = $total_month + $month;
                        $total_cost = $total_cost + $year;
@@ -56,22 +56,22 @@
            
            <table style="margin-top:50px;">
                 <tr>
-                    <th>Weekly Salary</th><td style="background-color:grey;"><? echo $total_week; ?></td>
+                    <th>Weekly Salary</th><td style="background-color:grey;"><?php echo $total_week; ?></td>
                 </tr>
                 <tr>
-                    <th>Monthly Salary</th><td style="background-color:#80dfff;"><? echo $total_month; ?></td>
+                    <th>Monthly Salary</th><td style="background-color:#80dfff;"><?php echo $total_month; ?></td>
                 </tr>
                 <tr>
-                    <th>Annual Salary</th><td style="background-color:#99ffe6;"><? echo $total_cost; ?></td>
+                    <th>Annual Salary</th><td style="background-color:#99ffe6;"><?php echo $total_cost; ?></td>
                 </tr>
                 <tr>
-                    <th>Annual Fed. Witholdings</th><td style="background-color:red;"><? echo $total_ftax; ?></td>
+                    <th>Annual Fed. Witholdings</th><td style="background-color:red;"><?php echo $total_ftax; ?></td>
                 </tr>
                 <tr>
-                    <th>Annual State Witholdings</th><td style="background-color:green;"><? echo $total_stax; ?></td>
+                    <th>Annual State Witholdings</th><td style="background-color:green;"><?php echo $total_stax; ?></td>
                 </tr>
                 <tr>
-                    <th>Annual SOS/MED Witholdings</th><td style="background-color:yellow;"><? echo $total_otax; ?></td>
+                    <th>Annual SOS/MED Witholdings</th><td style="background-color:yellow;"><?php echo $total_otax; ?></td>
                 </tr>
            </table>
         </body>
