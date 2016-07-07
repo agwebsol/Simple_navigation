@@ -11,7 +11,7 @@
                     };
                 $.ajax
                 ({
-                    url: "<?php echo site_url('ajax_employee'); ?>",
+                    url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_employee",
                     type: 'POST',
                     async : false,
                     data: form_data,
@@ -32,7 +32,7 @@
                     };
                 $.ajax
                 ({
-                    url: "<?php echo site_url('ajax_delete_employee'); ?>",
+                    url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/ajax_delete_employee",
                     type: 'POST',
                     async : false,
                     data: form_data,
