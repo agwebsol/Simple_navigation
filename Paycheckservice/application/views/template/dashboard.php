@@ -1,6 +1,6 @@
 <!---Dashboard with Ajax functions--->
-    <html>
-        <head>
+            
+        <body>
             <script>
                 function click_kick(){
                     $('#data').html('Yeah');
@@ -45,14 +45,10 @@
                                 {
                                     $('#data').html(msg);
                                 }
-                        error: function(){alert('error');}
                     });
                     
                 }
             </script>
-            
-        </head>
-        <body>
             <div class="jumbotron">
                 <form Method="POST" class="form-inline" role="form" >
                     <h3 style=""><i class="fa fa-home" style="font-size:70px; "></i>Home</h3>
@@ -91,4 +87,3 @@
                 </div>
             </div>
         </body>
-    </html>
