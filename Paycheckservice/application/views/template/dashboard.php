@@ -4,13 +4,18 @@
             <script type="text/javascript">
                         $(document).ready(function() {
                             $('#btnn').click(function(eve){
-                        
+                            var form_data =
+                                {
+                                    f_tax :$('#f_tax').val(),
+                                    s_tax  :$('#s_tax').val(),
+                                    o_tax  :$('#o_tax').val()
+                                }
                             $.ajax({
                               type: "POST", 
                               url: "http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/index", 
                         
                               complete: function(data){
-                                $('#data').html('Yeaj');
+                                $('#data').html(form_data);
                             },
                             
                             });
