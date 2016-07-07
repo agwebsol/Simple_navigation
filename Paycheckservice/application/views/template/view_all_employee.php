@@ -76,7 +76,7 @@
                                     </td>
                                     <td><button class="btn btn-danger" onclick="delete_employee(<?php echo $id; ?>)">Delete</button></td>
                                 </tr>
-                            <?    
+                            <?php    
                         }
                     ?>
                     </tbody>
