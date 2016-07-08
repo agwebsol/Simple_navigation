@@ -46,7 +46,7 @@
                                     <td><?php echo $employee['SSN']; ?></td>
                                     <td><?php echo $employee['Hour_rate']; ?></td>
                                     <td>
-                                        <input type="input" name="hours_<? echo $k; ?>" required>
+                                        <input type="input" name="hours_<?php echo $k; ?>" required>
                                     </td>
                                     <td>
                                         <input type="hidden" value="<?php echo $employee['SSN']; ?>" name="ssn_<?php echo $k; ?>">
