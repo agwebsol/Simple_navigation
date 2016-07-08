@@ -264,7 +264,7 @@ class App_Controller extends CI_Controller
 		{
 			$period = $_POST['period'];
 			$this->Crud_model->delete_payroll_period($period);
-			header('LOCATION: http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/App_Controller');
+			header('LOCATION: http://52.40.215.168/Simple-Paycheck-Service/Paycheckservice/index.php/App_Controller/index');
 		}
 	}
 }
